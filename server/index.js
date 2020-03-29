@@ -8,10 +8,10 @@ const fs = require('fs');
 const path = require('path');
 
 //configs and others
-const CONFIG = require('./config/dev')
+const CONFIG = require('./config/config')
 const UTIL = require('./utils/util')
-port = CONFIG.port
-DB_URI  = CONFIG.mongoUri
+port = CONFIG.SERVER.PORT
+DB_URI  = CONFIG.SECRET.MONGO
 
 // db connection 
 mongoose.connect(DB_URI, {useNewUrlParser: true, useUnifiedTopology: true},err=>{
@@ -35,15 +35,16 @@ app.use(logger('combined'))
 // using session 
 app.use(
     session(
-        {secret:CONFIG.secret,resave: false,
-            saveUninitialized: true,
+        {secret:CONFIG.SECRET.SESSION,resave: false,
+            saveUninitialized: false,
             cookie:{maxAge:60*1000*30}
         }))
 
 
 //routes 
-const openRoute = require('./routes/openRoutes')
-app.use('/api',openRoute)
+const authRoute= require('./routes/authRoute')
+app.use('/api',authRoute)
+
 
 app.post('/',(req,res)=>{
     console.log(req.body)

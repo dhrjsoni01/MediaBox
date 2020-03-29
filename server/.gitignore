@@ -1,5 +1,5 @@
-#config
-/config
+#config 
+/config/secret.js
 
 # dependencies
 /node_modules
