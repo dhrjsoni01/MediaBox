@@ -1,0 +1,15 @@
+<video playsinline style="height: 400px; width:600px;" #videoPlayer id="videoPlayer" controls muted="muted">
+    <source src="http://192.168.43.18:8000/media/video" type="video/mp4">
+</video>
+
+<script type="text/javascript">
+    video = document.getElementById("videoPlayer");
+
+    function print() {
+        console.log(video.audioTracks.length)
+    }
+    print()
+    console.log("from script")
+</script>
+
+<!-- <button (click)="doSomthing()">Do Somthing</button> -->

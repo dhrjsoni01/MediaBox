@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  pathList = ['Home','Movies']
   title = 'mediabox-ui';
 }
