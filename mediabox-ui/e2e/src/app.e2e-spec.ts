@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('mediabox-ui app is running!');
+    expect(page.getTitleText()).toEqual('Welcome to mediabox-ui!');
   });
 
   afterEach(async () => {

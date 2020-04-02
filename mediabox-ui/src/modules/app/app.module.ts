@@ -10,7 +10,6 @@ import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { UserModule } from '../user/user.module';
-import { TestModule } from 'src/app/test/test.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,6 @@ import { TestModule } from 'src/app/test/test.module';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    TestModule
   ],
   providers: [],
   bootstrap: [AppComponent]
