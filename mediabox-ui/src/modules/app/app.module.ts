@@ -10,6 +10,7 @@ import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { UserModule } from '../user/user.module';
+import { AngularWebStorageModule } from 'angular-web-storage';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { UserModule } from '../user/user.module';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    AngularWebStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

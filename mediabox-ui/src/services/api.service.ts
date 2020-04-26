@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 export class ApiService {
     private BASE_URL = "http://localhost:8000/api"
     constructor(private httpClient: HttpClient) { 
-        this.testServer()
+        // this.testServer()
     }
 
     login(username:string,password:string){
@@ -28,13 +28,23 @@ export class ApiService {
 
 
     testServer(){
-        this.httpClient.get(this.BASE_URL,{
+        this.httpClient.get<any>(this.BASE_URL,{
             withCredentials:true
         }).subscribe(
             response=>{
                 console.log(response)
             }
         )
+    }
+
+    getBasePaths(){
+        return this.httpClient.get<any>(this.BASE_URL+'/file/root')
+    }
+
+    getFilesInPath(path:string){
+        return this.httpClient.post<any>(this.BASE_URL+'/file/ls',{
+            'dir':path
+        })
     }
     
 }

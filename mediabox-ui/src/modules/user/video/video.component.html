@@ -1,15 +1,11 @@
-<video playsinline style="height: 400px; width:600px;" #videoPlayer id="videoPlayer" controls muted="muted">
-    <source src="http://192.168.43.18:8000/api/user/media/video" type="video/mp4">
-</video>
-
-<script type="text/javascript">
-    video = document.getElementById("videoPlayer");
-
-    function print() {
-        console.log(video.audioTracks.length)
-    }
-    print()
-    console.log("from script")
-</script>
-
-<!-- <button (click)="doSomthing()">Do Somthing</button> -->
+<div class="container">
+    <div class="row">
+        <h1>{{file.fileName}}</h1>
+    </div>
+    <div class="row">
+        <video class="col p-0" controls>
+            <source [src]="videoUrl" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+</div>

@@ -4,6 +4,7 @@ import { UserComponent } from './user.component';
 import { UserRoutingModule } from './user-routing.module';
 import { VideoComponent } from './video/video.component';
 import { FilesComponent } from './files/files.component';
+import { VideoService } from 'src/services/video.service';
 
 
 @NgModule({
@@ -14,11 +15,10 @@ import { FilesComponent } from './files/files.component';
     ],
     imports: [
         CommonModule,
-        UserRoutingModule
+        UserRoutingModule,
     ],
-    exports:[
-        CommonModule
-    ]
+    providers:[VideoService],
+    exports:[]
 })
 export class UserModule {
     constructor() {

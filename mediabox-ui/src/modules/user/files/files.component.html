@@ -1,3 +1,28 @@
-<div *ngFor="let item of pathList">
-    {{item}}
+<ol class="breadcrumb">
+    <li class="breadcrumb-item" *ngFor="let path of storage.pathList"><a (click)="moveDir(path)">{{path.name}}</a></li>
+</ol>
+<div class="container">
+    <div class="row">
+
+        <div class="col-2" *ngFor="let file of files">
+            <div class="px-2 py-2">
+                <div class="card border-primary mb-3">
+
+                    <a (click)="handleClick(file)" class="image-container movieA">
+                        <img src="../../../assets/images/movie_poster.jpg" class=" card-img">
+                        <div class="overlay">
+                            <div class="p-2">
+                                <h5 class="card-title">{{file.fileName}}</h5>
+                                <p class="card-text">{{file.mime}}</p>
+                                <p class="card-text">{{file.size}}</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- <img src="../../../assets/images/movie_poster.jpg" class="card-img"> -->
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
